@@ -10,7 +10,11 @@ router.get("/:contactId", control.getById);
 
 router.post("/", validateBody(schemas.addSchema), control.add);
 
-router.put("/:contactId", validateBody(schemas.addSchema), control.updateById);
+router.put(
+  "/:contactId",
+  validateBody(schemas.updateSchema),
+  control.updateById
+);
 
 router.delete("/:contactId", control.removeById);
 
