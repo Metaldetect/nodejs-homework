@@ -14,7 +14,12 @@ const updateSchema = Joi.object({
   phone: Joi.string().pattern(/^[0-9-]+$/),
 });
 
+const updateFavoriteSchema = Joi.object({
+  favorite: Joi.boolean().required(),
+});
+
 module.exports = {
   addSchema,
   updateSchema,
+  updateFavoriteSchema,
 };

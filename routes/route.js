@@ -18,4 +18,10 @@ router.put(
 
 router.delete("/:contactId", control.removeById);
 
+router.patch(
+  "/:contactId/favorite",
+  validateBody(schemas.updateFavoriteSchema),
+  control.updateStatusContact
+);
+
 module.exports = router;
