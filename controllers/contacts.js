@@ -36,7 +36,7 @@ const updateById = async (req, res) => {
   const { contactId } = req.params;
   const { name, email, phone } = req.body;
 
-  if (!Object.keys(req.body).length) {
+  if (!name && !email && !phone) {
     return res.status(400).json({ message: "missing fields" });
   }
 
