@@ -5,10 +5,6 @@ const validateEmailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zAZ0-9]+$/;
 
 const userSchema = new Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       match: validateEmailRegex,
@@ -34,7 +30,6 @@ const userSchema = new Schema(
 );
 
 const registerSchema = Joi.object({
-  name: Joi.string().required(),
   password: Joi.string().min(6).required(),
   email: Joi.string().pattern(validateEmailRegex).required(),
 });
